@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Ebay\Sell;
+namespace Ebay\Sell\Marketing;
 
 /**
  * Configuration Class Doc Comment
