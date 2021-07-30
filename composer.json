@@ -1,5 +1,5 @@
 {
-    "name": "zvps/ebay-sell-marketing-php-client",
+    "name": "zvps\/ebay-sell-marketing-php-client",
     "version": "5.0.0",
     "description": "The Marketing API offers two platforms that sellers can use to promote and advertise their products: Promoted Listings is an eBay ad service that lets sellers set up ad campaigns for the products they want to promote. eBay displays the ads in search results and in other marketing modules as SPONSORED listings. If an item in a Promoted Listings campaign sells, the seller is assessed a Promoted Listings fee, which is a seller-specified percentage applied to the sales price. For complete details, see Promoted Listings. Promotions Manager gives sellers a way to offer discounts on specific items as a way to attract buyers to their inventory. Sellers can set up discounts (such as &quot;20% off&quot; and other types of offers) on specific items or on an entire customer order. To further attract buyers, eBay prominently displays promotion teasers throughout buyer flows. For complete details, see Promotions Manager. Marketing reports, on both the Promoted Listings and Promotions Manager platforms, give sellers information that shows the effectiveness of their marketing strategies. The data gives sellers the ability to review and fine tune their marketing efforts. Important! Sellers must have an active eBay Store subscription, and they must accept the Terms and Conditions before they can make requests to these APIs in the Production environment. There are also site-specific listings requirements and restrictions associated with these marketing tools, as listed in the &quot;requirements and restrictions&quot; sections for Promoted Listings and Promotions Manager. The table below lists all the Marketing API calls grouped by resource.",
     "keywords": [
@@ -11,29 +11,33 @@
         "rest",
         "api"
     ],
-    "homepage": "https://openapi-generator.tech",
+    "homepage": "https:\/\/openapi-generator.tech",
     "license": "unlicense",
     "authors": [
         {
             "name": "OpenAPI-Generator contributors",
-            "homepage": "https://openapi-generator.tech"
+            "homepage": "https:\/\/openapi-generator.tech"
         }
     ],
     "require": {
-        "php": ">=7.2",
+        "php": ">=5.6",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle": "^6.2"
+        "guzzlehttp\/guzzle": "^6.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.0 || ^9.0",
-        "friendsofphp/php-cs-fixer": "^2.12"
+        "phpunit\/phpunit": "^8.0 || ^9.0",
+        "friendsofphp\/php-cs-fixer": "^2.12"
     },
     "autoload": {
-        "psr-4": { "Ebay\\Sell\\Marketing\\" : "lib/" }
+        "psr-4": {
+            "Ebay\\Sell\\Marketing\\": "lib\/"
+        }
     },
     "autoload-dev": {
-        "psr-4": { "Ebay\\Sell\\Marketing\\Test\\" : "test/" }
+        "psr-4": {
+            "Ebay\\Sell\\Marketing\\Test\\": "test\/"
+        }
     }
 }

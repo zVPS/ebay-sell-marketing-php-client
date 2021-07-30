@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class MetricMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -184,8 +184,8 @@ class MetricMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['data_type'] = $data['data_type'] ?? null;
-        $this->container['metric_key'] = $data['metric_key'] ?? null;
+        $this->container['data_type'] = isset($data['data_type']) ? $data['data_type'] : null;
+        $this->container['metric_key'] = isset($data['metric_key']) ? $data['metric_key'] : null;
     }
 
     /**
@@ -280,7 +280,7 @@ class MetricMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

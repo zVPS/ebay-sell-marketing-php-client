@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -189,9 +189,9 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->container['auto_select_future_inventory'] = $data['auto_select_future_inventory'] ?? null;
-        $this->container['criterion_type'] = $data['criterion_type'] ?? null;
-        $this->container['selection_rules'] = $data['selection_rules'] ?? null;
+        $this->container['auto_select_future_inventory'] = isset($data['auto_select_future_inventory']) ? $data['auto_select_future_inventory'] : null;
+        $this->container['criterion_type'] = isset($data['criterion_type']) ? $data['criterion_type'] : null;
+        $this->container['selection_rules'] = isset($data['selection_rules']) ? $data['selection_rules'] : null;
     }
 
     /**
@@ -310,7 +310,7 @@ class CampaignCriterion implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

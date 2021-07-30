@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class InventoryItem implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -179,7 +179,7 @@ class InventoryItem implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['inventory_reference_id'] = $data['inventory_reference_id'] ?? null;
+        $this->container['inventory_reference_id'] = isset($data['inventory_reference_id']) ? $data['inventory_reference_id'] : null;
     }
 
     /**
@@ -250,7 +250,7 @@ class InventoryItem implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

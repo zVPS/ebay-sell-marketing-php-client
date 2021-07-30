@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class AdReference implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -184,8 +184,8 @@ class AdReference implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['ad_id'] = $data['ad_id'] ?? null;
-        $this->container['href'] = $data['href'] ?? null;
+        $this->container['ad_id'] = isset($data['ad_id']) ? $data['ad_id'] : null;
+        $this->container['href'] = isset($data['href']) ? $data['href'] : null;
     }
 
     /**
@@ -280,7 +280,7 @@ class AdReference implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

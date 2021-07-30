@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class SelectedInventoryDiscount implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -194,10 +194,10 @@ class SelectedInventoryDiscount implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->container['discount_benefit'] = $data['discount_benefit'] ?? null;
-        $this->container['discount_id'] = $data['discount_id'] ?? null;
-        $this->container['inventory_criterion'] = $data['inventory_criterion'] ?? null;
-        $this->container['rule_order'] = $data['rule_order'] ?? null;
+        $this->container['discount_benefit'] = isset($data['discount_benefit']) ? $data['discount_benefit'] : null;
+        $this->container['discount_id'] = isset($data['discount_id']) ? $data['discount_id'] : null;
+        $this->container['inventory_criterion'] = isset($data['inventory_criterion']) ? $data['inventory_criterion'] : null;
+        $this->container['rule_order'] = isset($data['rule_order']) ? $data['rule_order'] : null;
     }
 
     /**
@@ -340,7 +340,7 @@ class SelectedInventoryDiscount implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

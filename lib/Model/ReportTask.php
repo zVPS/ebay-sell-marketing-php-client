@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class ReportTask implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -274,26 +274,26 @@ class ReportTask implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['campaign_ids'] = $data['campaign_ids'] ?? null;
-        $this->container['date_from'] = $data['date_from'] ?? null;
-        $this->container['date_to'] = $data['date_to'] ?? null;
-        $this->container['dimensions'] = $data['dimensions'] ?? null;
-        $this->container['inventory_references'] = $data['inventory_references'] ?? null;
-        $this->container['listing_ids'] = $data['listing_ids'] ?? null;
-        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
-        $this->container['metric_keys'] = $data['metric_keys'] ?? null;
-        $this->container['report_expiration_date'] = $data['report_expiration_date'] ?? null;
-        $this->container['report_format'] = $data['report_format'] ?? null;
-        $this->container['report_href'] = $data['report_href'] ?? null;
-        $this->container['report_id'] = $data['report_id'] ?? null;
-        $this->container['report_name'] = $data['report_name'] ?? null;
-        $this->container['report_task_completion_date'] = $data['report_task_completion_date'] ?? null;
-        $this->container['report_task_creation_date'] = $data['report_task_creation_date'] ?? null;
-        $this->container['report_task_expected_completion_date'] = $data['report_task_expected_completion_date'] ?? null;
-        $this->container['report_task_id'] = $data['report_task_id'] ?? null;
-        $this->container['report_task_status'] = $data['report_task_status'] ?? null;
-        $this->container['report_task_status_message'] = $data['report_task_status_message'] ?? null;
-        $this->container['report_type'] = $data['report_type'] ?? null;
+        $this->container['campaign_ids'] = isset($data['campaign_ids']) ? $data['campaign_ids'] : null;
+        $this->container['date_from'] = isset($data['date_from']) ? $data['date_from'] : null;
+        $this->container['date_to'] = isset($data['date_to']) ? $data['date_to'] : null;
+        $this->container['dimensions'] = isset($data['dimensions']) ? $data['dimensions'] : null;
+        $this->container['inventory_references'] = isset($data['inventory_references']) ? $data['inventory_references'] : null;
+        $this->container['listing_ids'] = isset($data['listing_ids']) ? $data['listing_ids'] : null;
+        $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
+        $this->container['metric_keys'] = isset($data['metric_keys']) ? $data['metric_keys'] : null;
+        $this->container['report_expiration_date'] = isset($data['report_expiration_date']) ? $data['report_expiration_date'] : null;
+        $this->container['report_format'] = isset($data['report_format']) ? $data['report_format'] : null;
+        $this->container['report_href'] = isset($data['report_href']) ? $data['report_href'] : null;
+        $this->container['report_id'] = isset($data['report_id']) ? $data['report_id'] : null;
+        $this->container['report_name'] = isset($data['report_name']) ? $data['report_name'] : null;
+        $this->container['report_task_completion_date'] = isset($data['report_task_completion_date']) ? $data['report_task_completion_date'] : null;
+        $this->container['report_task_creation_date'] = isset($data['report_task_creation_date']) ? $data['report_task_creation_date'] : null;
+        $this->container['report_task_expected_completion_date'] = isset($data['report_task_expected_completion_date']) ? $data['report_task_expected_completion_date'] : null;
+        $this->container['report_task_id'] = isset($data['report_task_id']) ? $data['report_task_id'] : null;
+        $this->container['report_task_status'] = isset($data['report_task_status']) ? $data['report_task_status'] : null;
+        $this->container['report_task_status_message'] = isset($data['report_task_status_message']) ? $data['report_task_status_message'] : null;
+        $this->container['report_type'] = isset($data['report_type']) ? $data['report_type'] : null;
     }
 
     /**
@@ -820,7 +820,7 @@ class ReportTask implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

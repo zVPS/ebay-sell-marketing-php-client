@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class PromotionDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -234,18 +234,18 @@ class PromotionDetail implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['coupon_code'] = $data['coupon_code'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['end_date'] = $data['end_date'] ?? null;
-        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['priority'] = $data['priority'] ?? null;
-        $this->container['promotion_href'] = $data['promotion_href'] ?? null;
-        $this->container['promotion_id'] = $data['promotion_id'] ?? null;
-        $this->container['promotion_image_url'] = $data['promotion_image_url'] ?? null;
-        $this->container['promotion_status'] = $data['promotion_status'] ?? null;
-        $this->container['promotion_type'] = $data['promotion_type'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['coupon_code'] = isset($data['coupon_code']) ? $data['coupon_code'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
+        $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['priority'] = isset($data['priority']) ? $data['priority'] : null;
+        $this->container['promotion_href'] = isset($data['promotion_href']) ? $data['promotion_href'] : null;
+        $this->container['promotion_id'] = isset($data['promotion_id']) ? $data['promotion_id'] : null;
+        $this->container['promotion_image_url'] = isset($data['promotion_image_url']) ? $data['promotion_image_url'] : null;
+        $this->container['promotion_status'] = isset($data['promotion_status']) ? $data['promotion_status'] : null;
+        $this->container['promotion_type'] = isset($data['promotion_type']) ? $data['promotion_type'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
     }
 
     /**
@@ -580,7 +580,7 @@ class PromotionDetail implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

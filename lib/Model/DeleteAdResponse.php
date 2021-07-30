@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class DeleteAdResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -194,10 +194,10 @@ class DeleteAdResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['ad_id'] = $data['ad_id'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
-        $this->container['listing_id'] = $data['listing_id'] ?? null;
-        $this->container['status_code'] = $data['status_code'] ?? null;
+        $this->container['ad_id'] = isset($data['ad_id']) ? $data['ad_id'] : null;
+        $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
+        $this->container['listing_id'] = isset($data['listing_id']) ? $data['listing_id'] : null;
+        $this->container['status_code'] = isset($data['status_code']) ? $data['status_code'] : null;
     }
 
     /**
@@ -340,7 +340,7 @@ class DeleteAdResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

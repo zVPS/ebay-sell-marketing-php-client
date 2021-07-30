@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class ItemPromotionResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -249,21 +249,21 @@ class ItemPromotionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['apply_discount_to_single_item_only'] = $data['apply_discount_to_single_item_only'] ?? null;
-        $this->container['budget'] = $data['budget'] ?? null;
-        $this->container['coupon_configuration'] = $data['coupon_configuration'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['discount_rules'] = $data['discount_rules'] ?? null;
-        $this->container['end_date'] = $data['end_date'] ?? null;
-        $this->container['inventory_criterion'] = $data['inventory_criterion'] ?? null;
-        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['priority'] = $data['priority'] ?? null;
-        $this->container['promotion_id'] = $data['promotion_id'] ?? null;
-        $this->container['promotion_image_url'] = $data['promotion_image_url'] ?? null;
-        $this->container['promotion_status'] = $data['promotion_status'] ?? null;
-        $this->container['promotion_type'] = $data['promotion_type'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['apply_discount_to_single_item_only'] = isset($data['apply_discount_to_single_item_only']) ? $data['apply_discount_to_single_item_only'] : null;
+        $this->container['budget'] = isset($data['budget']) ? $data['budget'] : null;
+        $this->container['coupon_configuration'] = isset($data['coupon_configuration']) ? $data['coupon_configuration'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['discount_rules'] = isset($data['discount_rules']) ? $data['discount_rules'] : null;
+        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
+        $this->container['inventory_criterion'] = isset($data['inventory_criterion']) ? $data['inventory_criterion'] : null;
+        $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['priority'] = isset($data['priority']) ? $data['priority'] : null;
+        $this->container['promotion_id'] = isset($data['promotion_id']) ? $data['promotion_id'] : null;
+        $this->container['promotion_image_url'] = isset($data['promotion_image_url']) ? $data['promotion_image_url'] : null;
+        $this->container['promotion_status'] = isset($data['promotion_status']) ? $data['promotion_status'] : null;
+        $this->container['promotion_type'] = isset($data['promotion_type']) ? $data['promotion_type'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
     }
 
     /**
@@ -670,7 +670,7 @@ class ItemPromotionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

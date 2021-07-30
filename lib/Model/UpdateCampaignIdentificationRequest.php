@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class UpdateCampaignIdentificationRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -189,9 +189,9 @@ class UpdateCampaignIdentificationRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['campaign_name'] = $data['campaign_name'] ?? null;
-        $this->container['end_date'] = $data['end_date'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['campaign_name'] = isset($data['campaign_name']) ? $data['campaign_name'] : null;
+        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
     }
 
     /**
@@ -310,7 +310,7 @@ class UpdateCampaignIdentificationRequest implements ModelInterface, ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

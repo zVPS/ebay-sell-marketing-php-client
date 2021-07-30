@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class RuleCriteria implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -199,11 +199,11 @@ class RuleCriteria implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['exclude_inventory_items'] = $data['exclude_inventory_items'] ?? null;
-        $this->container['exclude_listing_ids'] = $data['exclude_listing_ids'] ?? null;
-        $this->container['markup_inventory_items'] = $data['markup_inventory_items'] ?? null;
-        $this->container['markup_listing_ids'] = $data['markup_listing_ids'] ?? null;
-        $this->container['selection_rules'] = $data['selection_rules'] ?? null;
+        $this->container['exclude_inventory_items'] = isset($data['exclude_inventory_items']) ? $data['exclude_inventory_items'] : null;
+        $this->container['exclude_listing_ids'] = isset($data['exclude_listing_ids']) ? $data['exclude_listing_ids'] : null;
+        $this->container['markup_inventory_items'] = isset($data['markup_inventory_items']) ? $data['markup_inventory_items'] : null;
+        $this->container['markup_listing_ids'] = isset($data['markup_listing_ids']) ? $data['markup_listing_ids'] : null;
+        $this->container['selection_rules'] = isset($data['selection_rules']) ? $data['selection_rules'] : null;
     }
 
     /**
@@ -370,7 +370,7 @@ class RuleCriteria implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

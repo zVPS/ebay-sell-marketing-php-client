@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class InventoryCriterion implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -194,10 +194,10 @@ class InventoryCriterion implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['inventory_criterion_type'] = $data['inventory_criterion_type'] ?? null;
-        $this->container['inventory_items'] = $data['inventory_items'] ?? null;
-        $this->container['listing_ids'] = $data['listing_ids'] ?? null;
-        $this->container['rule_criteria'] = $data['rule_criteria'] ?? null;
+        $this->container['inventory_criterion_type'] = isset($data['inventory_criterion_type']) ? $data['inventory_criterion_type'] : null;
+        $this->container['inventory_items'] = isset($data['inventory_items']) ? $data['inventory_items'] : null;
+        $this->container['listing_ids'] = isset($data['listing_ids']) ? $data['listing_ids'] : null;
+        $this->container['rule_criteria'] = isset($data['rule_criteria']) ? $data['rule_criteria'] : null;
     }
 
     /**
@@ -340,7 +340,7 @@ class InventoryCriterion implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

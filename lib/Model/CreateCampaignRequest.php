@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class CreateCampaignRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -204,12 +204,12 @@ class CreateCampaignRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['campaign_criterion'] = $data['campaign_criterion'] ?? null;
-        $this->container['campaign_name'] = $data['campaign_name'] ?? null;
-        $this->container['end_date'] = $data['end_date'] ?? null;
-        $this->container['funding_strategy'] = $data['funding_strategy'] ?? null;
-        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['campaign_criterion'] = isset($data['campaign_criterion']) ? $data['campaign_criterion'] : null;
+        $this->container['campaign_name'] = isset($data['campaign_name']) ? $data['campaign_name'] : null;
+        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
+        $this->container['funding_strategy'] = isset($data['funding_strategy']) ? $data['funding_strategy'] : null;
+        $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
     }
 
     /**
@@ -400,7 +400,7 @@ class CreateCampaignRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

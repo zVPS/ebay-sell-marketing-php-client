@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class SelectionRule implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -204,12 +204,12 @@ class SelectionRule implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['brands'] = $data['brands'] ?? null;
-        $this->container['category_ids'] = $data['category_ids'] ?? null;
-        $this->container['category_scope'] = $data['category_scope'] ?? null;
-        $this->container['listing_condition_ids'] = $data['listing_condition_ids'] ?? null;
-        $this->container['max_price'] = $data['max_price'] ?? null;
-        $this->container['min_price'] = $data['min_price'] ?? null;
+        $this->container['brands'] = isset($data['brands']) ? $data['brands'] : null;
+        $this->container['category_ids'] = isset($data['category_ids']) ? $data['category_ids'] : null;
+        $this->container['category_scope'] = isset($data['category_scope']) ? $data['category_scope'] : null;
+        $this->container['listing_condition_ids'] = isset($data['listing_condition_ids']) ? $data['listing_condition_ids'] : null;
+        $this->container['max_price'] = isset($data['max_price']) ? $data['max_price'] : null;
+        $this->container['min_price'] = isset($data['min_price']) ? $data['min_price'] : null;
     }
 
     /**
@@ -400,7 +400,7 @@ class SelectionRule implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

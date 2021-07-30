@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class ReportMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -199,11 +199,11 @@ class ReportMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['dimension_metadata'] = $data['dimension_metadata'] ?? null;
-        $this->container['max_number_of_dimensions_to_request'] = $data['max_number_of_dimensions_to_request'] ?? null;
-        $this->container['max_number_of_metrics_to_request'] = $data['max_number_of_metrics_to_request'] ?? null;
-        $this->container['metric_metadata'] = $data['metric_metadata'] ?? null;
-        $this->container['report_type'] = $data['report_type'] ?? null;
+        $this->container['dimension_metadata'] = isset($data['dimension_metadata']) ? $data['dimension_metadata'] : null;
+        $this->container['max_number_of_dimensions_to_request'] = isset($data['max_number_of_dimensions_to_request']) ? $data['max_number_of_dimensions_to_request'] : null;
+        $this->container['max_number_of_metrics_to_request'] = isset($data['max_number_of_metrics_to_request']) ? $data['max_number_of_metrics_to_request'] : null;
+        $this->container['metric_metadata'] = isset($data['metric_metadata']) ? $data['metric_metadata'] : null;
+        $this->container['report_type'] = isset($data['report_type']) ? $data['report_type'] : null;
     }
 
     /**
@@ -370,7 +370,7 @@ class ReportMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

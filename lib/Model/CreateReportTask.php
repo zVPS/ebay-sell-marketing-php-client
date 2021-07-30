@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class CreateReportTask implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -224,16 +224,16 @@ class CreateReportTask implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['campaign_ids'] = $data['campaign_ids'] ?? null;
-        $this->container['date_from'] = $data['date_from'] ?? null;
-        $this->container['date_to'] = $data['date_to'] ?? null;
-        $this->container['dimensions'] = $data['dimensions'] ?? null;
-        $this->container['inventory_references'] = $data['inventory_references'] ?? null;
-        $this->container['listing_ids'] = $data['listing_ids'] ?? null;
-        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
-        $this->container['metric_keys'] = $data['metric_keys'] ?? null;
-        $this->container['report_format'] = $data['report_format'] ?? null;
-        $this->container['report_type'] = $data['report_type'] ?? null;
+        $this->container['campaign_ids'] = isset($data['campaign_ids']) ? $data['campaign_ids'] : null;
+        $this->container['date_from'] = isset($data['date_from']) ? $data['date_from'] : null;
+        $this->container['date_to'] = isset($data['date_to']) ? $data['date_to'] : null;
+        $this->container['dimensions'] = isset($data['dimensions']) ? $data['dimensions'] : null;
+        $this->container['inventory_references'] = isset($data['inventory_references']) ? $data['inventory_references'] : null;
+        $this->container['listing_ids'] = isset($data['listing_ids']) ? $data['listing_ids'] : null;
+        $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
+        $this->container['metric_keys'] = isset($data['metric_keys']) ? $data['metric_keys'] : null;
+        $this->container['report_format'] = isset($data['report_format']) ? $data['report_format'] : null;
+        $this->container['report_type'] = isset($data['report_type']) ? $data['report_type'] : null;
     }
 
     /**
@@ -520,7 +520,7 @@ class CreateReportTask implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

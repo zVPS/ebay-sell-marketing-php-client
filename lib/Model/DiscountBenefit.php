@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class DiscountBenefit implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -194,10 +194,10 @@ class DiscountBenefit implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['amount_off_item'] = $data['amount_off_item'] ?? null;
-        $this->container['amount_off_order'] = $data['amount_off_order'] ?? null;
-        $this->container['percentage_off_item'] = $data['percentage_off_item'] ?? null;
-        $this->container['percentage_off_order'] = $data['percentage_off_order'] ?? null;
+        $this->container['amount_off_item'] = isset($data['amount_off_item']) ? $data['amount_off_item'] : null;
+        $this->container['amount_off_order'] = isset($data['amount_off_order']) ? $data['amount_off_order'] : null;
+        $this->container['percentage_off_item'] = isset($data['percentage_off_item']) ? $data['percentage_off_item'] : null;
+        $this->container['percentage_off_order'] = isset($data['percentage_off_order']) ? $data['percentage_off_order'] : null;
     }
 
     /**
@@ -340,7 +340,7 @@ class DiscountBenefit implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

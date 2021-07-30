@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class CreateAdsByInventoryReferenceRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -189,9 +189,9 @@ class CreateAdsByInventoryReferenceRequest implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->container['bid_percentage'] = $data['bid_percentage'] ?? null;
-        $this->container['inventory_reference_id'] = $data['inventory_reference_id'] ?? null;
-        $this->container['inventory_reference_type'] = $data['inventory_reference_type'] ?? null;
+        $this->container['bid_percentage'] = isset($data['bid_percentage']) ? $data['bid_percentage'] : null;
+        $this->container['inventory_reference_id'] = isset($data['inventory_reference_id']) ? $data['inventory_reference_id'] : null;
+        $this->container['inventory_reference_type'] = isset($data['inventory_reference_type']) ? $data['inventory_reference_type'] : null;
     }
 
     /**
@@ -310,7 +310,7 @@ class CreateAdsByInventoryReferenceRequest implements ModelInterface, ArrayAcces
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class DimensionKeyAnnotation implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -184,8 +184,8 @@ class DimensionKeyAnnotation implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->container['annotation_key'] = $data['annotation_key'] ?? null;
-        $this->container['data_type'] = $data['data_type'] ?? null;
+        $this->container['annotation_key'] = isset($data['annotation_key']) ? $data['annotation_key'] : null;
+        $this->container['data_type'] = isset($data['data_type']) ? $data['data_type'] : null;
     }
 
     /**
@@ -280,7 +280,7 @@ class DimensionKeyAnnotation implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

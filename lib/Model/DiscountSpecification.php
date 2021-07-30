@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class DiscountSpecification implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -199,11 +199,11 @@ class DiscountSpecification implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['for_each_amount'] = $data['for_each_amount'] ?? null;
-        $this->container['for_each_quantity'] = $data['for_each_quantity'] ?? null;
-        $this->container['min_amount'] = $data['min_amount'] ?? null;
-        $this->container['min_quantity'] = $data['min_quantity'] ?? null;
-        $this->container['number_of_discounted_items'] = $data['number_of_discounted_items'] ?? null;
+        $this->container['for_each_amount'] = isset($data['for_each_amount']) ? $data['for_each_amount'] : null;
+        $this->container['for_each_quantity'] = isset($data['for_each_quantity']) ? $data['for_each_quantity'] : null;
+        $this->container['min_amount'] = isset($data['min_amount']) ? $data['min_amount'] : null;
+        $this->container['min_quantity'] = isset($data['min_quantity']) ? $data['min_quantity'] : null;
+        $this->container['number_of_discounted_items'] = isset($data['number_of_discounted_items']) ? $data['number_of_discounted_items'] : null;
     }
 
     /**
@@ -370,7 +370,7 @@ class DiscountSpecification implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

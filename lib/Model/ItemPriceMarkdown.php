@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class ItemPriceMarkdown implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -234,18 +234,18 @@ class ItemPriceMarkdown implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->container['apply_free_shipping'] = $data['apply_free_shipping'] ?? null;
-        $this->container['auto_select_future_inventory'] = $data['auto_select_future_inventory'] ?? null;
-        $this->container['block_price_increase_in_item_revision'] = $data['block_price_increase_in_item_revision'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['end_date'] = $data['end_date'] ?? null;
-        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['priority'] = $data['priority'] ?? null;
-        $this->container['promotion_image_url'] = $data['promotion_image_url'] ?? null;
-        $this->container['promotion_status'] = $data['promotion_status'] ?? null;
-        $this->container['selected_inventory_discounts'] = $data['selected_inventory_discounts'] ?? null;
-        $this->container['start_date'] = $data['start_date'] ?? null;
+        $this->container['apply_free_shipping'] = isset($data['apply_free_shipping']) ? $data['apply_free_shipping'] : null;
+        $this->container['auto_select_future_inventory'] = isset($data['auto_select_future_inventory']) ? $data['auto_select_future_inventory'] : null;
+        $this->container['block_price_increase_in_item_revision'] = isset($data['block_price_increase_in_item_revision']) ? $data['block_price_increase_in_item_revision'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
+        $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['priority'] = isset($data['priority']) ? $data['priority'] : null;
+        $this->container['promotion_image_url'] = isset($data['promotion_image_url']) ? $data['promotion_image_url'] : null;
+        $this->container['promotion_status'] = isset($data['promotion_status']) ? $data['promotion_status'] : null;
+        $this->container['selected_inventory_discounts'] = isset($data['selected_inventory_discounts']) ? $data['selected_inventory_discounts'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
     }
 
     /**
@@ -580,7 +580,7 @@ class ItemPriceMarkdown implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

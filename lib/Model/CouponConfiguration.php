@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class CouponConfiguration implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -189,9 +189,9 @@ class CouponConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['coupon_code'] = $data['coupon_code'] ?? null;
-        $this->container['coupon_type'] = $data['coupon_type'] ?? null;
-        $this->container['max_coupon_redemption_per_user'] = $data['max_coupon_redemption_per_user'] ?? null;
+        $this->container['coupon_code'] = isset($data['coupon_code']) ? $data['coupon_code'] : null;
+        $this->container['coupon_type'] = isset($data['coupon_type']) ? $data['coupon_type'] : null;
+        $this->container['max_coupon_redemption_per_user'] = isset($data['max_coupon_redemption_per_user']) ? $data['max_coupon_redemption_per_user'] : null;
     }
 
     /**
@@ -310,7 +310,7 @@ class CouponConfiguration implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class SummaryReportResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -199,11 +199,11 @@ class SummaryReportResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['base_sale'] = $data['base_sale'] ?? null;
-        $this->container['last_updated'] = $data['last_updated'] ?? null;
-        $this->container['percentage_sales_lift'] = $data['percentage_sales_lift'] ?? null;
-        $this->container['promotion_sale'] = $data['promotion_sale'] ?? null;
-        $this->container['total_sale'] = $data['total_sale'] ?? null;
+        $this->container['base_sale'] = isset($data['base_sale']) ? $data['base_sale'] : null;
+        $this->container['last_updated'] = isset($data['last_updated']) ? $data['last_updated'] : null;
+        $this->container['percentage_sales_lift'] = isset($data['percentage_sales_lift']) ? $data['percentage_sales_lift'] : null;
+        $this->container['promotion_sale'] = isset($data['promotion_sale']) ? $data['promotion_sale'] : null;
+        $this->container['total_sale'] = isset($data['total_sale']) ? $data['total_sale'] : null;
     }
 
     /**
@@ -370,7 +370,7 @@ class SummaryReportResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

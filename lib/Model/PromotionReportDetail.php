@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class PromotionReportDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -254,22 +254,22 @@ class PromotionReportDetail implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['average_item_discount'] = $data['average_item_discount'] ?? null;
-        $this->container['average_item_revenue'] = $data['average_item_revenue'] ?? null;
-        $this->container['average_order_discount'] = $data['average_order_discount'] ?? null;
-        $this->container['average_order_revenue'] = $data['average_order_revenue'] ?? null;
-        $this->container['average_order_size'] = $data['average_order_size'] ?? null;
-        $this->container['base_sale'] = $data['base_sale'] ?? null;
-        $this->container['items_sold_quantity'] = $data['items_sold_quantity'] ?? null;
-        $this->container['number_of_orders_sold'] = $data['number_of_orders_sold'] ?? null;
-        $this->container['percentage_sales_lift'] = $data['percentage_sales_lift'] ?? null;
-        $this->container['promotion_href'] = $data['promotion_href'] ?? null;
-        $this->container['promotion_id'] = $data['promotion_id'] ?? null;
-        $this->container['promotion_report_id'] = $data['promotion_report_id'] ?? null;
-        $this->container['promotion_sale'] = $data['promotion_sale'] ?? null;
-        $this->container['promotion_type'] = $data['promotion_type'] ?? null;
-        $this->container['total_discount'] = $data['total_discount'] ?? null;
-        $this->container['total_sale'] = $data['total_sale'] ?? null;
+        $this->container['average_item_discount'] = isset($data['average_item_discount']) ? $data['average_item_discount'] : null;
+        $this->container['average_item_revenue'] = isset($data['average_item_revenue']) ? $data['average_item_revenue'] : null;
+        $this->container['average_order_discount'] = isset($data['average_order_discount']) ? $data['average_order_discount'] : null;
+        $this->container['average_order_revenue'] = isset($data['average_order_revenue']) ? $data['average_order_revenue'] : null;
+        $this->container['average_order_size'] = isset($data['average_order_size']) ? $data['average_order_size'] : null;
+        $this->container['base_sale'] = isset($data['base_sale']) ? $data['base_sale'] : null;
+        $this->container['items_sold_quantity'] = isset($data['items_sold_quantity']) ? $data['items_sold_quantity'] : null;
+        $this->container['number_of_orders_sold'] = isset($data['number_of_orders_sold']) ? $data['number_of_orders_sold'] : null;
+        $this->container['percentage_sales_lift'] = isset($data['percentage_sales_lift']) ? $data['percentage_sales_lift'] : null;
+        $this->container['promotion_href'] = isset($data['promotion_href']) ? $data['promotion_href'] : null;
+        $this->container['promotion_id'] = isset($data['promotion_id']) ? $data['promotion_id'] : null;
+        $this->container['promotion_report_id'] = isset($data['promotion_report_id']) ? $data['promotion_report_id'] : null;
+        $this->container['promotion_sale'] = isset($data['promotion_sale']) ? $data['promotion_sale'] : null;
+        $this->container['promotion_type'] = isset($data['promotion_type']) ? $data['promotion_type'] : null;
+        $this->container['total_discount'] = isset($data['total_discount']) ? $data['total_discount'] : null;
+        $this->container['total_sale'] = isset($data['total_sale']) ? $data['total_sale'] : null;
     }
 
     /**
@@ -700,7 +700,7 @@ class PromotionReportDetail implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

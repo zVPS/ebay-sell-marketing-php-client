@@ -45,7 +45,7 @@ use \Ebay\Sell\Marketing\ObjectSerializer;
  */
 class DeleteAdsByInventoryReferenceResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -199,11 +199,11 @@ class DeleteAdsByInventoryReferenceResponse implements ModelInterface, ArrayAcce
      */
     public function __construct(array $data = null)
     {
-        $this->container['ad_ids'] = $data['ad_ids'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
-        $this->container['inventory_reference_id'] = $data['inventory_reference_id'] ?? null;
-        $this->container['inventory_reference_type'] = $data['inventory_reference_type'] ?? null;
-        $this->container['status_code'] = $data['status_code'] ?? null;
+        $this->container['ad_ids'] = isset($data['ad_ids']) ? $data['ad_ids'] : null;
+        $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
+        $this->container['inventory_reference_id'] = isset($data['inventory_reference_id']) ? $data['inventory_reference_id'] : null;
+        $this->container['inventory_reference_type'] = isset($data['inventory_reference_type']) ? $data['inventory_reference_type'] : null;
+        $this->container['status_code'] = isset($data['status_code']) ? $data['status_code'] : null;
     }
 
     /**
@@ -370,7 +370,7 @@ class DeleteAdsByInventoryReferenceResponse implements ModelInterface, ArrayAcce
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
