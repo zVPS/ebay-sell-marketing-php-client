@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Ebay\Sell
+ * @package  Ebay\Sell\Marketing
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Ebay\Sell\Test\Model;
+namespace Ebay\Sell\Marketing\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 
@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @category    Class
  * @description This complex type defines a promotion as being either a monetary amount or a percentage of a sales price that&#39;s subtracted from the price of an item or order. &lt;p&gt;Set the amount of the discount and the rules that govern when the discount triggers using the &lt;b&gt;discountBenefit&lt;/b&gt; and &lt;b&gt;discountSpecification&lt;/b&gt; fields.&lt;/p&gt;  &lt;p class&#x3D;\&quot;tablenote\&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; In &lt;b&gt;volume pricing promotions&lt;/b&gt;, you must configure at least two &lt;b&gt;discountRule&lt;/b&gt; containers and at most four.&lt;/p&gt;
- * @package     Ebay\Sell
+ * @package     Ebay\Sell\Marketing
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */

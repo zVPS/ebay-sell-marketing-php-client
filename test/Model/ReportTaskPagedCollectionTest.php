@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Ebay\Sell
+ * @package  Ebay\Sell\Marketing
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Ebay\Sell\Test\Model;
+namespace Ebay\Sell\Marketing\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 
@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @category    Class
  * @description This type defines the fields that paginate the reports tasks returned by the request. The entire &lt;i&gt;result set&lt;/i&gt; consists of 0 or more sequenced &lt;i&gt;response pages&lt;/i&gt;, where each page consists of 0 or more items from the complete result set.
- * @package     Ebay\Sell
+ * @package     Ebay\Sell\Marketing
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */

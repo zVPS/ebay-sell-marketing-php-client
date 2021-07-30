@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Ebay\Sell
+ * @package  Ebay\Sell\Marketing
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Ebay\Sell\Test\Model;
+namespace Ebay\Sell\Marketing\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 
@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @category    Class
  * @description This type defines the response fields used by the &lt;b&gt;bulkCreateAdsByInventoryReference&lt;/b&gt; method.
- * @package     Ebay\Sell
+ * @package     Ebay\Sell\Marketing
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
